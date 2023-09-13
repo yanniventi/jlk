@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+# Symptom Checker and Drug Recommendation System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository contains code for a Symptom Checker and Drug Recommendation System built using React for the front end and Flask for the back end. This system allows users to input their symptoms and receive recommendations for potential medical conditions and associated drug treatments.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Symptom Input**: Users can enter their symptoms using an Autocomplete component that suggests common symptoms.
+- **Condition Matching**: The system matches the entered symptoms with a database of medical conditions.
+- **Drug Recommendations**: Once a condition is identified, the system provides drug recommendations for the identified condition.
+- **Responsive Design**: The user interface is designed to be responsive and user-friendly.
 
-### `npm start`
+## Code Structure
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The code is organized into several components and files:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. **Frontend (React)**:
+   - `AutocompleteButton.js`: Handles symptom input and sends the selected symptoms to the backend for matching.
+   - `SearchButton.js`: Initiates the symptom matching process and displays the results.
+   - `DrugRecommendation.js`: Displays drug recommendations based on the matched condition.
+   - `Autocomplete.js`, and `SearchButton.js` are components used by `AutocompleteButton.js`.
 
-### `npm test`
+2. **Backend (Flask)**:
+   - `app.py`: Defines the Flask application and handles API requests.
+   - `/api/get_csv_data`: Retrieves symptom data from an external CSV file, processes it, and returns it to the frontend.
+   - `/api/get_drug`: Sends a POST request to an external drug recommendation API based on the identified condition.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting Started
 
-### `npm run build`
+1. Clone this repository to your local machine.
+2. Install the required dependencies for both the frontend and backend.
+   - For the frontend, run `npm install`.
+3. Start the frontend and backend servers separately:
+   - For the frontend, run `npm start` in the `frontend` directory.
+   - For the backend, navigate to backend folder and run `python app.py`.
+4. Access the application in your web browser at `http://localhost:3000`.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Dependencies
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- React: A JavaScript library for building user interfaces.
+- Material-UI: A popular UI framework for React.
+- Flask: A micro web framework for building web applications in Python.
+- Flask-CORS: A Flask extension for handling Cross-Origin Resource Sharing (CORS).
+- Requests: A Python library for making HTTP requests.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## External APIs
 
-### `npm run eject`
+- This project uses an external drug recommendation API to fetch drug information based on the identified medical condition.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Data Source
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Symptom data is fetched from an external CSV file containing symptom information.

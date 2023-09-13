@@ -5,15 +5,15 @@ import SearchButton from './SearchButton';
 import DrugRecommendation from '../DrugReccomendation';
 
 const containerStyle = {
-  margin: '20px',
+  margin: '40px',
   marginLeft: '20px',
-  backgroundColor: '#f5f5f5', // Background color for the container
-  padding: '20px', // Padding inside the container
-  borderRadius: '10px', // Rounded corners
+  backgroundColor: '#E0EDF4',
+  padding: '20px',
+  borderRadius: '10px',
 };
 
 const autocompleteStyle = {
-  width: '100%', // Make the Autocomplete component fill the container
+  width: '100%',
 };
 
 export default function AutocompleteButton({ symptoms, hashmap, condition }) {
@@ -21,7 +21,7 @@ export default function AutocompleteButton({ symptoms, hashmap, condition }) {
 
   return (
     <div style={containerStyle}>
-      <h1 style={{ color: '#4F709C' }}>SYMPTOM CHECKER</h1> {/* Header with blue color */}
+      <h1 style={{ color: '#4F709C' }}>SYMPTOM CHECKER</h1>
       <Autocomplete
         multiple
         id="combo-box-demo"
@@ -35,7 +35,7 @@ export default function AutocompleteButton({ symptoms, hashmap, condition }) {
           <TextField
             {...params}
             label="Symptoms"
-            variant="outlined" // Add an outline to the input
+            variant="outlined"
           />
         )}
       />
